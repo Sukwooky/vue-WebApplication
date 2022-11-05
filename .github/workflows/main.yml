@@ -32,9 +32,5 @@ jobs:
           aws s3 sync dist/ s3://dguicecapstone.com \
           --region ap-northeast-2
   
-      - name: Invalidate CloudFront Cache
-        run: |
-          aws configure set preview.cloudfront true\
-          aws cloudfront create-invalidation  --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/index.html"
 
 
