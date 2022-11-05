@@ -31,6 +31,7 @@ jobs:
         run: |
           aws s3 sync dist/ s3://dguicecapstone.com \
           --region ap-northeast-2
+          echo aws configure
   
       - name: Invalidate CloudFront Cache
         run: aws cloudfront create-invalidation --profile=githubaction --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/index.html"
