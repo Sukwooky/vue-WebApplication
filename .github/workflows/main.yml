@@ -33,8 +33,9 @@ jobs:
           --region ap-northeast-2
       
       - name: Invalidate CloudFront Cache
-        run: 
-          aws cloudfront create-invalidation  --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths "/index.html"
+        run: aws cloudfront create-invalidation --distribution-id EFCZ716FAIMW2 --paths "/*"
+
+          
 
   
 
